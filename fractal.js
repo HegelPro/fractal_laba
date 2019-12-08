@@ -6,7 +6,7 @@ const START_VECTOR = [0, 1]
 const START_POINT = [0, 0]
 
 export function generateNextFractalName(fractalName, rules) {
-  return rules.reduce((res, elem) => res.replace(elem[0], elem[1]), fractalName)
+  return rules.reduce((res, elem) => res.replace(new RegExp(elem[0], 'g'), elem[1]), fractalName)
 }
 
 export function generateFractalName(fractalName, rules, index) {

@@ -14,3 +14,7 @@ export function drawTrack(points) {
   })
   ctx.stroke()
 }
+
+export function clearCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
