@@ -11,60 +11,96 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.min.js'></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <p>Fractal Laba</p><p>&copy;Palkin Lev. Group 6296.</p>
+  <header class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-stretch">
+      <div class="d-flex justify-content-between">
+        <h3>Fractal Laba</h3>
+        <p>&copy;Palkin Lev. Group 6296.</p>
+      </div>
     </nav>
   </header>
   <main>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center mb-2">
         <canvas
           width="1000"
           height="500"
           id="canvas"
         ></canvas>
       </div>
-      <div class="row">
+      <div class="row mb-2">
+        <div class="btn-group" role="group" aria-label="Basic example">
           <button
-          type="button"
-          class="btn btn-primary"
-          id="next-iteration"
-        >Next Iteration</button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="previous-iteration"
-        >Previous Iteration</button>
+            type="button"
+            class="btn btn-secondary"
+            id="next-iteration"
+          >Next Iteration</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="previous-iteration"
+          >Previous Iteration</button>
+        </div>
       </div>
-      <div class="row">
-        <form>
-          <div class="form-group">
-            <label for="start-fractal-name">Start fractal name</label>
-            <input type="text" class="form-control" id="start-fractal-name">
+      <form>
+        <div class="row mb-2">
+          <div class="col">
+            <div class="form-group">
+              <label for="start-fractal-name">Start fractal name</label>
+              <input type="text" class="form-control" id="start-fractal-name">
+            </div>
+            <div class="form-group">
+              <label for="alpha">Alpha</label>
+              <input type="text" class="form-control" id="alpha">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="alpha">Alpha</label>
-            <input type="text" class="form-control" id="alpha">
+          <div class="col">
+            <div class="container">
+              <p>Rules</p>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control rule-key">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control rule-value">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control rule-key">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control rule-value">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control rule-key">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control rule-value">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control rule-key">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control rule-value">
+                </div>
+              </div>
+            </div>
           </div>
-          <button type="button" class="btn btn-primary" id="set-fractal-properties">Set fractal properties</button>
-        </form>
-      </div>
-      <!-- not prity -->
-      <div class="row">
-        <input type="text" class="rule-key">
-        <input type="text" class="rule-value">
-      </div>
-      <div class="row">
-        <input type="text" class="rule-key">
-        <input type="text" class="rule-value">
-      </div>
-      <div class="row">
-        <input type="text" class="rule-key">
-        <input type="text" class="rule-value">
-      </div>
-      <!-- not prity -->
-      <div class="row">
+        </div>
+        <div class="row mb-2">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="set-fractal-properties"
+          >Set fractal properties</button>
+        </div>
+      </form>
+      <div class="row mb-2">
         <p id="fractal-name"></p>
       </div>
     </div>
